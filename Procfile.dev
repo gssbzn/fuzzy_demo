@@ -1,0 +1,3 @@
+# recursively load foreman with the production services.
+memcached: memcached
+foreman: foreman start -f Procfile
