@@ -1,0 +1,24 @@
+<h1>Reports Cholesterol Risk</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>LDL Cholesterol</th>
+      <th>HDL Cholesterol</th>
+      <th>Triglycerides</th>
+      <th>Degree</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @results.each do |result| %>
+      <tr>
+        <td><%= result.patient.name %></td>
+        <td><%= number_with_precision(result.ldl_cholesterol, precision: 2) %></td>
+        <td><%= number_with_precision(result.hdl_cholesterol, precision: 2) %></td>
+        <td><%= number_with_precision(result.triglycerides, precision: 2) %></td>
+        <td><%= number_with_precision(result.membership_degree, precision: 2) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @results %>

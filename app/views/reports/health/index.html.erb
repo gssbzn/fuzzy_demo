@@ -1,0 +1,65 @@
+<h1>Reports Health</h1>
+
+<%= form_tag reports_health_index_path, method: 'post' do %>
+  <div class="row">
+    <div class="large-2 columns">
+      <label>Weight
+        <%= select_tag :weight, options_for_select([['Normal','normal_weight'],['Overweight','overweight']], params[:weight]) %>
+      </label>
+    </div>
+    <div class="large-2 columns">
+      <label>LDL levels
+        <%= select_tag :ldl_cholesterol, options_for_select([['Optimal','ldl_optimal'], ['Hight', 'ldl_hight']], params[:ldl_cholesterol]) %>
+      </label>
+    </div>
+    <div class="large-2 columns">
+      <label>HDL Levels
+        <%= select_tag :hdl_cholesterol, options_for_select([['Normal','hdl_normal'],['Risk','hdl_risk']], params[:hdl_cholesterol]) %>
+      </label>
+    </div>
+    <div class="large-2 columns">
+      <label>Triglycerides
+        <%= select_tag :triglycerides, options_for_select([['Normal','triglycerides_normal'],['Hight','triglycerides_hight']], params[:triglycerides]) %>
+      </label>
+    </div>
+    <div class="large-2 columns">
+      <label>Blood Glucose Level
+        <%= select_tag :blood_glucose_level, options_for_select([['Normal', 'normal_sugar'],['Risk','pre_diabetes'], ['Diabetes','diabetes']], params[:triglycerides]) %>
+      </label>
+    </div>
+    <div class="large-2 columns">
+      <%= submit_tag 'Search', name: nil, class: 'button small' %>
+    </div>
+  </div>
+
+
+<% end %>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Height</th>
+      <th>Weight</th>
+      <th>LDL levels</th>
+      <th>HDL levels</th>
+      <th>Triglycerides</th>
+      <th>Blood glucose level</th>
+      <th>Degree</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @results.each do |result| %>
+      <tr>
+        <td><%= result.patient.name %></td>
+        <td><%= number_with_precision(result.height, precision: 2) %></td>
+        <td><%= number_with_precision(result.weight, precision: 2) %></td>
+        <td><%= number_with_precision(result.ldl_cholesterol, precision: 2) %></td>
+        <td><%= number_with_precision(result.hdl_cholesterol, precision: 2) %></td>
+        <td><%= number_with_precision(result.triglycerides, precision: 2) %></td>
+        <td><%= number_with_precision(result.blood_glucose_level, precision: 2) %></td>
+        <td><%= number_with_precision(result.try(:membership_degree), precision: 2) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @results %>

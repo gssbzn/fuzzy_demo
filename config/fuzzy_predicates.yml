@@ -1,0 +1,65 @@
+#young:
+#  min: 10
+#  core1: 15
+#  core2: 20
+#  max: 25
+fever:
+  min:   37
+  core1: 38
+  core2: infinite
+  max:   infinite
+hdl_normal:
+  min:   50
+  core1: 60
+  core2: infinite
+  max:   infinite
+hdl_risk:
+  min:   infinite
+  core1: infinite
+  core2: 40
+  max:   50
+ldl_optimal:
+  min:   infinite
+  core1: infinite
+  core2: 130
+  max:   160
+ldl_hight:
+  min:   130
+  core1: 160
+  core2: infinite
+  max:   infinite
+triglycerides_normal:
+  min:   infinite
+  core1: infinite
+  core2: 150
+  max:   200
+triglycerides_hight:
+  min:   180
+  core1: 500
+  core2: infinite
+  max:   infinite
+normal_sugar:
+  min:   infinite
+  core1: infinite
+  core2: 99
+  max:   105
+pre_diabetes:
+  min:   100
+  core1: 110
+  core2: 120
+  max:   125
+diabetes:
+  min:   125
+  core1: 126
+  core2: infinite
+  max:   infinite
+normal_weight:
+  min:   60
+  core1: 70
+  core2: 80
+  max:   100
+overweight:
+  min:   90
+  core1: 120
+  core2: infinite
+  max:   infinite

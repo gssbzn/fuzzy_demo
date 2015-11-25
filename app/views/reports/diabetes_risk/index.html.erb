@@ -1,0 +1,22 @@
+<h1>Reports Diabetes Risk</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Blood glucose level</th>
+      <th>Weight</th>
+      <th>Degree</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @results.each do |result| %>
+      <tr>
+        <td><%= result.patient.name %></td>
+        <td><%= number_with_precision(result.blood_glucose_level, precision: 2) %></td>
+        <td><%= number_with_precision(result.weight, precision: 2) %></td>
+        <td><%= number_with_precision(result.membership_degree, precision: 2) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= paginate @results %>

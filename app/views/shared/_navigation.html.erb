@@ -1,0 +1,26 @@
+<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1>
+        <%= link_to 'Fuzzy Health', root_path %>
+      </h1>
+    </li>
+     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li class="<% if current_page?(controller: 'reports/cholesterol_risk', action: 'index') %> active <% end %>">
+        <%= link_to "Cholesterol", reports_cholesterol_risk_index_path %>
+      </li>
+      <li class="<% if current_page?(controller: 'reports/diabetes_risk', action: 'index') %> active <% end %>">
+        <%= link_to "Diabetes", reports_diabetes_risk_index_path %>
+      </li>
+      <li class="<% if current_page?(controller: 'reports/health') %> active <% end %>">
+        <%= link_to "Health", reports_health_index_path %>
+      </li>
+    </ul>
+  </section>
+</nav>

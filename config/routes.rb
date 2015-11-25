@@ -1,4 +1,12 @@
 Rails.application.routes.draw do
+  namespace :reports do
+    get 'health/index'
+    post 'health/index'
+    get 'cholesterol_risk/index'
+    get 'diabetes_risk/index'
+  end
+
+  root 'welcome#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
