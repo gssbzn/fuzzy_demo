@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.2.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 4.2.5'
@@ -30,12 +30,12 @@ gem 'figaro'
 gem 'foundation-rails'
 gem 'fuzzy_where'
 gem 'kaminari'
+gem 'factory_girl_rails'
+gem 'faker'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  gem 'factory_girl_rails'
-  gem 'faker'
 end
 
 group :development do

@@ -1,7 +1,7 @@
 module FuzzyDemo
   class DataGenerator
-    def self.generate
-      for i in 0..100
+    def self.generate(limit = 100)
+      for i in 0..limit
         FactoryGirl.create(:consultation)
       end
     end
