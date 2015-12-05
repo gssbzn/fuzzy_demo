@@ -1,7 +1,7 @@
 # FuzzyWhere Demo
 
 A demo to showcase some basic functionality of [FuzzyWhere](https://github.com/koombea/fuzzy_where).
-This demo uses some basic medical data to ilustrate the use of fuzzy queries to a database.
+This demo uses some basic medical data to illustrate the use of fuzzy queries to a database.
 
 ## Installation
 
@@ -23,3 +23,17 @@ This demo uses some basic medical data to ilustrate the use of fuzzy queries to 
 ## Demo on heroku
 
 Find a running demo at: http://fuzzy-demo.herokuapp.com
+
+## Presentation
+
+There's a small presentation about the `FuzzyWhere` gem at http://fuzzy-demo.herokuapp.com/presentation
+
+## Additional Resources
+
+FuzzyWhere: https://github.com/koombea/fuzzy_where
+
+## License
+
+MIT License. Copyright 2015 Gustavo Bazan. http://gustavobazan.com
+
+This software is not created by, affiliated with, or supported by Slack Technologies, Inc.

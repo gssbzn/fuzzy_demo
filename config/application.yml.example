@@ -1,0 +1,17 @@
+defaults: &defaults
+  MAX_THREADS:              '8'
+
+development:
+  <<: *defaults
+  DB_PASSWORD:              ''
+  DB_USERNAME:              ''
+
+test:
+  <<: *defaults
+  DB_PASSWORD:              ''
+  DB_USERNAME:              ''
+
+production:
+  <<: *defaults
+  MAX_THREADS:              '16'
+  RAILS_SERVE_STATIC_FILES: 'true'
