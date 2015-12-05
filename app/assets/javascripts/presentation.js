@@ -10,11 +10,6 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require jquery
-//= require jquery_ujs
-//= require foundation
-//= require turbolinks
+//= require head.min
+//= require html5shiv
 //= require reveal
-//= require_tree .
-
-$(function(){ $(document).foundation(); });

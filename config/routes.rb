@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :presentation, only: :index
+
   namespace :reports do
     get 'health/index'
     post 'health/index'

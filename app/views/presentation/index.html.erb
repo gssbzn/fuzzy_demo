@@ -1,0 +1,84 @@
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+	<section>
+		<h1>Fuzzy Database Queries</h1>
+		<h3>FuzzyWhere Introduction</h3>
+		<p>
+			<small>Created by <a href="http://gustavobazan.com">Gustavo Bazan</a> / <a href="https://twitter.com/gsszbn">@gssbzn</a></small>
+		</p>
+	</section>
+
+	<section data-background="<%= image_path 'significance_cartoon.gif' %>">
+	</section>
+
+	<section>
+		<h2>SQLf</h2>
+		<pre>
+			<code class="hljs sql" data-trim>
+				SELECT * FROM hotels WHERE price < 30;
+			</code>
+		</pre>
+		<pre>
+			<code class="hljs sql" data-trim>
+				SELECT * FROM hotels WHERE price = cheap;
+			</code>
+		</pre>
+	</section>
+
+	<section>
+		<section data-background="<%= image_path 'fuzzy_temperature.png' %>">
+		</section>
+		<section>
+			<h2>Fuzzy sets</h2>
+			<p><%= image_tag image_path('fuzzy_set.png') %></p>
+			<p><%= image_tag image_path('fuzzy_set_formula.png') %></p>
+		</section>
+	</section>
+
+	<section>
+		<h2>FuzzyWhere</h2>
+		<pre>
+			<code class="hljs ruby" data-trim>
+				gem 'fuzzy_where'
+Hotel.fuzzy_where(price: :cheap)
+Sensor.fuzzy_where(temperature: :hot, installation: :old)
+Employee.fuzzy_where(age: :aprox_34_years, height: :tall, weight: :heavy, salary: :regular_salary)
+			</code>
+		</pre>
+	</section>
+
+	<section>
+		<section>
+			<h2>Fuzzy Health</h2>
+			<p>
+				<pre>rails generate fuzzy_where:predicate ldl_hight 130 160 infinite infinite</pre>
+        <%= image_tag image_path('ldl_hight.png') %>
+			</p>
+			<p>
+				<pre>rails generate fuzzy_where:predicate pre_diabetes 100 110 120 125</pre>
+        <%= image_tag image_path('pre_diabetes.png') %>
+			</p>
+		</section>
+	</section>
+</div>
+</div>
+
+<script>
+  // Full list of configuration options available at:
+  // https://github.com/hakimel/reveal.js#configuration
+  Reveal.initialize({
+  	controls: true,
+  	progress: true,
+  	history: true,
+  	center: true,
+
+  	transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+  	// Optional reveal.js plugins
+  	dependencies: [
+  		{ src: '<%= javascript_path 'classList.js' %>', condition: function() { return !document.body.classList; } },
+  		{ src: '<%= javascript_path 'highlight.js' %>', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+  		{ src: '<%= javascript_path 'zoom.js' %>', async: true },
+  	]
+  });
+</script>
