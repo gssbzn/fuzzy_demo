@@ -1,4 +1,18 @@
 <meta charset="utf-8" />
+<% if current_page?(controller: '/presentation', action: 'index') %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <%= stylesheet_link_tag "presentation", media: :all %>
+  <%= stylesheet_link_tag "reveal/theme/solarized", id: 'theme' %>
+  <%= javascript_include_tag "presentation" %>
+<% else %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "vendor/modernizr" %>
+  <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+<% end %>
+
 <meta name="description" content="Fuzzy database queries with Ruby and FuzzyWhere" />
 <meta name="keywords" content="fuzzy, sqlf, fuzzywhere, rails" />
 <meta name="robots" content="index,follow" />
